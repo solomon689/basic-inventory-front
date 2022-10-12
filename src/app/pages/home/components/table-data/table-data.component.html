@@ -1,0 +1,14 @@
+<td>{{ product?.name }}</td>
+<td>{{ product?.stock }}</td>
+<td>{{ product?.price }}</td>
+<td>{{ product?.description }}</td>
+<td>
+    <div class="row">
+        <div class="col-lg-4">
+            <i class="fa-solid fa-pen-to-square edit-color" title="Editar"></i>
+        </div>
+        <div class="col-lg-4">
+            <i class="fa-solid fa-trash delete-color" title="Eliminar" (click)="deleteProductEvent(product?.id)"></i>
+        </div>
+    </div>
+</td>

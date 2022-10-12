@@ -1,0 +1,29 @@
+<div class="col-lg-12 text-end p-2">
+  <button 
+      class="btn btn-outline-dark" 
+      data-bs-toggle="modal" 
+      data-bs-target="#exampleModal"
+      (click)="createModal()"
+  >Agregar Producto</button>
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col" class="table-dark">Nombre</th>
+        <th scope="col" class="table-dark">Stock</th>
+        <th scope="col" class="table-dark">Precio</th>
+        <th scope="col" class="table-dark">Descripción</th>
+        <th scope="col" class="table-dark">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let product of products">
+        <tr app-table-data [product]="product" (deleteEvent)="deleteProduct($event)"></tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <app-product-modal 
+    [title]="modalTitle"
+    (newProductEvent)="addNewProduct($event)"
+  ></app-product-modal>
+  

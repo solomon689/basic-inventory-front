@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="container p-5">
+    <div class="row" *ngIf="products && products.length > 0; else notInfo">
+        <div class="col-lg-12">
+            <app-product-table 
+            [products]="products"
+            ></app-product-table>
+        </div>
+    </div>
+    <ng-template #notInfo>
+        <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+                <span class="h2 fs-3 text-info">No tiene productos que mostrar :(</span>
+            </div>
+        </div>
+    </ng-template>
+</div>

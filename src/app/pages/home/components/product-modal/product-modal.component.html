@@ -1,0 +1,34 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{{ title }}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="productForm">
+            <div class="mb-3">
+              <label for="product-name" class="form-label">Nombre del producto</label>
+              <input type="text" class="form-control" id="product-name" [class]="isValidField('name')" formControlName="name">
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Descripción del producto</label>
+              <textarea type="text" class="form-control" id="description" [class]="isValidField('description')" formControlName="description"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="stock" class="form-label">Stock</label>
+              <input type="number" class="form-control" id="stock" [class]="isValidField('stock')" formControlName="stock">
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Valor/Precio</label>
+              <input type="number" class="form-control" id="price" [class]="isValidField('price')" formControlName="price">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #closeModal>Cancelar</button>
+          <button type="submit" class="btn btn-primary" (click)="onSubmit()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
